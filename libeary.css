@@ -1,0 +1,18 @@
+.card-body{
+    background-color:rgb(205, 183, 183) ;
+}
+.btn-primary{
+	background-color: rgb(32, 224, 224);
+	color: black;
+	padding:10px;
+	font-size:16px;
+	margin: 20px 5px;
+	border-radius: 20%;
+	transition: .4s ease;
+}
+.btn-primary:hover{
+	background: transparent;
+	border:1px solid white;
+	color: white;
+    background-color: rgb(216, 125, 35);
+}

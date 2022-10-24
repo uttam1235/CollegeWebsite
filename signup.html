@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<style>
+    body{
+        background-image: url(https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1248542684?k=20&m=1248542684&s=612x612&w=0&h=1yKiRrtPhiqUJXS_yJDwMGVHVkYRk2pJX4PG3TT4ZYM=);
+        background-size: cover;
+    
+    
+    }
+    form{
+      background-image: url(https://i.pinimg.com/564x/bf/3e/77/bf3e77ff0fb528b2222d7bc7f6dca8e0.jpg)
+    }
+</style>
+<body>
+  
+<h1>Sign up page</h1>  
+<hr>  
+     <form id="form">
+         <h1>SignUP Page</h1>
+         <input id="name" type="text" placeholder="Enter Your Name"><br>
+         <input id="mobile" type="text" placeholder="Enter Your Mobile Number"><br>
+         <input id="email" type="text" placeholder="Enter Your Email Address"><br>
+         <input id="firstPass" type="text" placeholder="Create  Password"><br>
+         <input  id="submit" type="submit">
+        
+     </form>
+  
+    
+</body>
+</html>
+<script>
+     var form = document.querySelector("form");
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        
+        var data={
+            username:form.name.value,
+            email:form.email.value,
+            firstPassword:form.firstPass.value,
+           
+        }
+        console.log(data)
+        localStorage.setItem("userData",JSON.stringify(data));
+        alert("Account created Successfully")
+        window.location.href="login.html"
+        
+    })
+    
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<style>
+    body{
+        background-image: url(https://c8.alamy.com/comp/2CBWN9G/lifestyle-and-technology-concept-close-up-man-hands-with-laptop-and-social-media-web-chart-background-man-hands-use-computer-network-connect-to-soci-2CBWN9G.jpg);
+    }
+    form{
+        background-image: url(https://i0.wp.com/www.art-mine.com/collectorscorner/wp-content/uploads/2018/06/The-Magic-Hour-2019-Acrylic-on-Canvas-3622-x-5422-3000-Rebecca-Katz.jpg?fit=885%2C490&ssl=1&resize=1280%2C720);
+    }
+</style>
+<body>
+    <form id="form">
+        <h1>Login Page</h1>
+        <input id="email" type="text" placeholder="Enter Your Email Address"><br>
+        <input id="firstPass" type="text" placeholder="Create  Password"><br>
+        <input  id="submit" type="submit">
+    </form>
+    
+</body>
+</html>
+<script>
+     var form=document.querySelector("form")
+
+var userData=JSON.parse(localStorage.getItem("userData"));
+form.addEventListener("submit", function(event){
+         event.preventDefault();
+         var data={
+             email:form.email.value,
+             firstPass:form.firstPass.value,
+         }
+         if(userData==null){
+             alert("Please create an account")
+         }
+        else if (userData.email==data.email && userData.password==data.password){
+          alert("Login  Successful")
+          localStorage.setItem("signin",JSON.stringify(userData));
+           window.location.href="index.html"
+         }
+         else{
+             alert("User Does not exit")
+         }
+         
+
+})
+</script>
